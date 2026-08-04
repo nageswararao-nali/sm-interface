@@ -1,0 +1,16 @@
+.baseRate-form{
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+}
+.baseRate-form input{
+    margin-bottom: 15px;
+    padding: 5px;
+    border: 1px solid lightgray;
+}
+.baseRate-form input:focus{
+    border: none;
+    border: 1.5px solid rgb(89, 89, 242);
+    border-radius: 3px;
+}

@@ -1,0 +1,144 @@
+.searchBar-section{
+    display: flex;
+    gap: 20px;
+}
+.searchBar-section{
+    margin-top: 20px;
+
+}
+.driverTable th{
+    font-size: 15px;
+}
+/* Table style */
+
+.driverTable{
+    margin-top: 50px;
+
+}
+.driverTable thead tr th{
+    border-bottom: 1px solid black;
+    font-size: 13px ;
+}
+
+.driverTable tbody tr{
+    border-bottom: 1px solid lightgrey;
+}
+
+/* Modal Form stying */
+
+.addDriverForm{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding:5px;
+   
+}
+.addDriverForm label{
+    padding-bottom: 0px;
+}
+.addDriverForm input{
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.addDriverForm .owner input ,.addDriverForm .vehicle input {
+    border: none;
+    background-color: lightgrey;
+    color: black;
+    width: 350px;
+    padding: 4px;
+}
+.addDriverForm select{
+    padding: 3px;
+    margin-bottom: 40px;
+}
+              
+.driverBtn{
+    margin-bottom: 10px;
+
+}
+.driver-three-btns{
+    display: flex;
+    gap: 10px;
+}
+.driver-three-btns select{
+    background-color:#30A46C;
+    color: white;
+    font-weight: bold;
+    padding: 2px;
+    border: none;
+    border-radius: 6px;
+
+}
+#addDriverModal,#editDriverModal{
+    /* border: 2px solid lightgrey; */
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+    border-radius: 2px;
+}
+
+/* Using Toggle Button available status.. */
+.disabled{
+    color: lightgrey !important;
+}
+
+@media(max-width:325px){
+    .edit-driver-modal-mobile{
+        width: 375px !important;
+        position: absolute;
+        top: 6%;
+        left: 20%;
+    }
+    
+
+}
+
+@media(max-width:992px){
+    .edit-driver-modal-mobile{
+        width: 450px !important;
+        position: absolute;
+        top: 6%;
+        left: 22%;
+    }
+    /* Add Driver Modal... */
+    #add-driver-modal-mobile{
+        width: max-content;
+        top: 6%;
+        left: 42%;
+        
+    }
+    #add-driver-modal-mobile .modalHeader{
+        padding: 4px !important;
+    }
+    #add-driver-modal-mobile #addDriverModal .right{
+        /* border: 3px solid red; */
+        padding-left: 5px;
+        display: flex;
+        flex-direction: column;
+
+    }
+    #add-driver-modal-mobile #addDriverModal .right select{
+        width: 100px;
+    }
+    
+
+}
+@media (min-width:426px) and (max-width:768px){
+    .edit-driver-modal-mobile{
+        width: 500px !important;
+        position: absolute;
+        top: 10%;
+        left: -5%;
+    }
+    #add-driver-modal-mobile{
+        width: max-content;
+        top: 10%;
+        left: -20px;
+    }
+    
+
+}
+
+

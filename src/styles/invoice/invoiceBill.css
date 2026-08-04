@@ -1,0 +1,101 @@
+#bookingInvoice-Container{
+    padding: 10px;
+
+}
+#bookingInvoice-Container .inputSection{
+    display: flex;
+    gap: 3px;
+    margin-top: 15px;
+}
+#bookingInvoice-Container .inputSection select{
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    max-height: 45px;
+    
+}
+#bookingInvoice-Container .inputSection select:first-child{
+    color: rgb(162, 159, 159);
+}
+#bookingInvoice-Container .dateInputs{
+    display: flex;
+    gap: 5px;
+    
+}
+#bookingInvoice-Container .dateInputs input{
+    height: 40px;
+    padding-left: 4px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+
+}
+#bookingInvoice-Container #bap_id{
+    margin-left: 4px;
+    width: 300px;
+    height: 40px;
+    padding-left: 10px;
+    padding-top: 10px;
+    border-radius: 4px;
+    border: 1px solid lightgray;
+    position: relative;
+    text-align: justify;
+}
+#bookingInvoice-Container #bap_id::placeholder{
+    position: absolute;
+    top: 10px;
+}
+#bookingInvoice-Container .dateInputs input:focus{
+    outline: 1.5px solid rgb(94, 94, 226);
+    border: none;
+    border-radius: 4px;
+}
+
+#bookingInvoice-Container .dateInputs input::placeholder{
+    color: rgb(183, 175, 175);
+}
+
+
+#bookingInvoice-Container .buttonsInput{
+    display: flex;
+    gap: 5px;
+    margin-left: 20px;
+}
+#bookingInvoice-Container .buttonsInput .invoices_btn{
+    margin-left: 20px;
+}
+#bookingInvoice-Container .buttonsInput .invoices_btn_disabled{
+    margin-left: 20px;
+    background-color: lightgray;
+}
+#bookingInvoice-Container .buttonsInput .btn_small_disabled{
+     width: max-content;
+    background-color: #30A46C;
+    color:white;
+    border-radius: 4px;
+    padding: 6px;
+    border: none;
+    background-color: lightgray;
+}
+#bookingInvoice-Container .buttonsInput button{
+    height: 40px;    
+}
+
+
+/* Table style .... */
+#bookingInvoice-Container #InvoiceTable{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#bookingInvoice-Container #InvoiceTable thead tr{
+    border-bottom: 1px solid;
+}
+#bookingInvoice-Container #InvoiceTable tbody tr{
+    border-bottom: 1px rgb(202, 199, 199);
+}
+
+
+@media(max-width:992px){
+    #bookingInvoice-Container #InvoiceTable{
+        margin-top: 140px;
+    }
+
+}

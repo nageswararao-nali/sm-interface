@@ -1,0 +1,91 @@
+.addowner-form{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    
+}
+
+.addowner-form input{
+    margin-bottom: 6px;
+    padding: 3px;
+}
+.addowner-form input:focus,#ownersEditModalBody input:focus{
+    border: none;
+    border-radius: 3px;
+    border: 1.5px solid rgb(121, 121, 236);
+}
+.addowner-form .ownerBtn{
+    margin: 15px 0px 20px 0px;
+}
+
+/* ownersEditModal */
+#ownersEditModal{
+
+}
+#ownersEditModalBody {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+}
+#ownersEditModalBody input{
+    padding: 4px;
+    margin-bottom: 5px;
+}
+
+/* For Mobiles... */
+
+@media(max-width:992px){
+    .pagenoCounts{
+        position: relative;
+        left: 180px;
+    }
+    #ownerPagination{
+        position: relative;
+        right: 160px;
+    }
+    
+    
+    .owners-edit-modal-mobile{
+        max-width: fit-content;
+        top: 10%;
+        left: 30%;
+    }
+    .owners-edit-modal-mobile input{
+        padding: 2px !important;
+    }
+    .owners-edit-modal-mobile button{
+        width: max-content;
+        padding: 3px;
+        font-size: 12px !important;
+    }
+
+    .owners-add-modal-mobile{
+        max-width: 250px;
+        top: 5%;
+        left: 40%;
+        
+    }
+    .owners-add-modal-mobile p{
+        font-size: 13px !important;
+    }
+    
+
+}
+
+/* For Tab.. */
+
+@media(min-width:426px) and (max-width:768px){
+    .owners-edit-modal-mobile{
+        max-width: fit-content !important;
+        top: 15%;
+        /* right: -10px; */
+        left: -35px;
+    }
+    .owners-add-modal-mobile{
+        max-width: 250px !important;
+        top: 8%;
+        left: 15%;
+        
+    }
+
+}

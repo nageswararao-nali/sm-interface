@@ -1,0 +1,109 @@
+
+.addVeh-header p{
+    position: relative;
+    top: 10px;
+    
+
+}
+/* #vehicles input::placeholder{
+    padding-left: 2px;
+} */
+
+.addVeh-form{
+    display: flex;
+    gap: 20px;
+}
+.addVeh-form .form1{
+    display: flex;
+    flex-direction: column;
+    
+}
+.addVeh-form .form1 input{
+    padding: 3px;
+    margin-bottom: 15px;
+}
+.addVeh-form .form1 select{
+    margin-bottom: 15px;
+    padding: 3px;
+
+}
+.form1,.form2{
+    flex: 1;
+}
+.addVeh-form input:focus ,.addVeh-form select :focus{
+    
+    border: 1.5px solid rgb(115, 115, 236);
+    
+
+}
+.addVeh-form .owner input{
+    border: none;
+    background-color: lightgrey;
+    width: 100%;
+    padding: 5px;
+
+}
+.addVeh-form input::placeholder{
+    color: gray;
+}
+
+/* Edit Modal  */
+#vehicleEditModal span{
+    font-size: 16px;
+}
+#vehicleEditModalBody{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+#vehicleEditModalBody input,#vehicleEditModalBody select{
+    margin-bottom: 10px;
+    padding: 3px;
+}
+
+
+@media(max-width:992px){
+    .pagenoCounts{
+        /* border: 2px solid yellow; */
+        position: relative;
+        left: 180px;
+    }
+    #VehiclesPagination{
+        position: relative;
+        right: 160px;
+    }
+    /* Edit Modal... */
+    #vehicleEditModal{
+        max-width: 250px;
+        top: 9%;
+        left: 30%;
+    }
+    #vehicleEditModal #vehicleEditModalBody select{
+        width: 140px;
+    }
+    #vehicleEditModal #vehicleEditModalBody button{
+        width: 60px;
+        padding: 2px;
+    }
+
+    #add-vehicles-modal-mobile{
+        width: 400px;
+        top: 4%;
+        left: 25%;
+    }
+
+}
+@media(min-width:426px) and (max-width:768px){
+    #vehicleEditModal{
+        max-width: 250px;
+        top: 20%;
+        left: -3%;
+    }
+
+    #add-vehicles-modal-mobile{
+        width: max-content;
+        top: 8%;
+        left: 5%;
+        /* border: 4px solid blue; */
+    }
+}

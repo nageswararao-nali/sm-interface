@@ -1,0 +1,20 @@
+.adressEditForm{
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 20px;
+    border-radius: 5px;
+}
+.adressEditForm label{
+    margin-top: 10px;
+}
+.adressEditForm input{
+    padding: 4px;
+    border: 1.5px solid lightgrey;
+    border-radius: 3px;
+}
+.adressEditForm  button{
+    margin-top: 10px;
+    width: 100px;
+}
+

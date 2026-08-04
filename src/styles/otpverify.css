@@ -1,0 +1,178 @@
+
+/* -- LOGIN PAGE STYLE - START  */
+
+.loginContainer{
+    height: 100vh;
+    width: 100vw;
+    display:flex,
+}
+.loginContainer .logo_icon h3{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+.logo_icon{
+    position: relative;
+    top: 10%;
+}
+.logo_icon img{
+    width: 200px !important;
+    /* border: 2px solid green; */
+}
+.logo_icon span{
+    color: rgb(74, 152, 74);
+    font-size: 35px;
+    font-weight: bold;
+
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;width: 350px;
+    border: 0.5px solid grey;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 4px 4px 8px rgba(128, 128, 128, 0.5);
+    margin: auto;
+    margin-top: 4%;
+    
+}
+
+/* -- LOGIN PAGE STYLE - END  */
+
+.mainDiv-container{
+    height: 100vh;
+    width: 100vw;
+    
+
+}
+
+.mainDiv{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: auto;
+    margin-top: 7%;
+    height: 450px;width: 450px;
+    border: 0.5px solid grey;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 4px 4px 8px rgba(128, 128, 128, 0.5);
+}
+
+.otpDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.otpDiv input{
+    border: 2px solid green;
+    padding: 5px;
+    width: 200px;
+    border-radius: 2px;
+}
+/* Common Button Stylings... */
+button{
+    border-radius: 2px;
+    cursor: pointer;
+    width: 200px;
+    padding: 5px;
+    background-color: #30A46C;
+    color: black;
+    color: white;
+    font-weight: bold;
+    
+}
+.mobile-login-form{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.font-rubik-message{
+    margin-top: 3px !important;
+}
+
+
+/* Media Queries... */
+
+/* width is 980 pixels or less */
+    @media (max-width:980px){
+        .loginContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            
+        }
+        .logo_icon img{
+            width: 130px !important;
+            padding: none !important;
+        }
+
+
+/* Login Div... */
+        .login{
+            margin-top:65px;
+            height: 300px;width: 300px;
+        }
+
+
+        /* OTP Page.... */
+
+        .mainDiv-container{
+            /* border: 2px solid red; */
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .mainDiv-container .mainDiv{
+            /* border:2px solid green ; */
+            height: 350px;width: 350px;
+            margin: auto;
+            margin-top: 30%;
+        }
+        .mainDiv-container .mainDiv input{
+            width: 100%;
+        }
+
+}
+/* Only for 425 px  */
+
+        @media(max-width:425px){
+            .mainDiv-container .mainDiv{
+                /* border:2px solid rgb(208, 223, 208) ; */
+                height: 350px;width: 350px;
+                margin: auto;
+                margin-top: 40%;
+            }
+            .mainDiv-container .mainDiv input{
+                width: 100%;
+            }
+
+        }
+        @media(max-width:375px){
+            .mainDiv-container .mainDiv{
+                height: 300px;width: 280px;
+                margin: auto;
+                margin-top: 50%;
+                overflow-y: hidden;
+            }
+            .mainDiv-container .mainDiv input{
+                width: 100%;
+            }
+
+        }
+
+        
+        
+
+

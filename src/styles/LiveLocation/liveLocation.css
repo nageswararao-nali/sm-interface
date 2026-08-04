@@ -1,0 +1,130 @@
+.reactSelect{
+    /* border: 2px solid red; */
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.reactSelect .selection{
+    /* border: 2px solid blue; */
+    width: 350px;
+
+}
+.mapContainer{
+    position: relative;
+}
+#detailsShow{
+    position: absolute;
+    top: -50px;
+    right: 40px;
+    display: flex;
+    gap: 20px;
+    
+
+}
+.css-1nmdiq5-menu{
+    z-index: 100;
+}
+
+#detailsShow .driverSection,#detailsShow .tourSection{
+    box-shadow: rgba(70, 226, 120, 0.3) 0px 1px 2px 6px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Live Drivers list Table.. */
+.liveDrivers{
+    /* border: 2px solid red; */
+    /* width: max-content;
+    position: inherit;
+    left: 600px;
+    bottom: 100px; */
+    margin: auto;
+}
+.liveDrivers table th   {
+    border: 1px solid;
+    padding: 4px;
+    text-align: center;
+}
+
+.liveDrivers table tbody tr , .liveDrivers table tbody td {
+    border: 1px solid;
+    padding: 5px;
+}
+.liveDrivers table tbody td:first-child{
+    text-align: center;
+}
+#liveDriverTables .modalBody{
+    margin: auto;
+}
+.no_TourDrivers{
+    background-color: rgb(174, 240, 150);
+}
+.driver_Location_Details{
+    max-width: 250px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 4,    
+}
+.driver_Location_Details  :first-child {
+    font-weight: 500;
+}
+#drivername_search_input{
+    margin-right: 15px;
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid lightgrey;
+}
+
+
+
+
+
+@media (max-width:992px) {
+    .selection{
+        width: 200px !important;
+    }
+    #clearButton{
+        margin-left: -50px;
+    }
+    .mapContainer{
+         margin-top: 28% !important;
+    }
+    #detailsShow{
+        position: absolute;
+        flex-direction: row;
+        right: 10px;
+        margin-top: -12%;
+        
+    }
+    .reactSelect button{
+        position: relative;
+        left: 30px;
+    }
+    
+}
+@media only screen and  (max-width:575px){
+    #liveDriverTables{
+        width: 450px;
+        left: 30%;
+    }
+    .clear_Button{
+        margin-left: -50px !important;
+    }
+    .location_Button{
+        margin-left: -35px !important;
+    }
+    
+}
+@media only screen and  (min-width:576px) and (max-width:767px){
+    .clear_Button{
+        margin-left: -50px !important;
+    }
+    .location_Button{
+        margin-left: -35px !important;
+    }
+    
+}

@@ -1,0 +1,121 @@
+
+.baseLocationform-Div{
+    box-shadow:  0 0 5px 3px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+.baseLocationforms{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+
+}
+.baseLocationforms label{
+    font-weight: lighter;
+    
+}
+
+.baseLocationforms input{
+    width: 550px;
+    border: 1px solid grey;
+    padding: 6px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    
+} 
+.baseLocationforms input::placeholder{
+    color: rgb(166, 163, 163);
+}
+
+.baseLocationforms input:focus{
+    border: 2px solid rgb(103, 103, 235);
+}
+.baseLocationform-Div{
+    box-shadow:  0 0 5px 3px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}-Btn:hover{
+    background-color: rgb(183, 236, 183);
+    color:black
+}
+.pickup-Div{
+    display: flex;
+    gap: 20px;
+}
+.pickup-Div div input{
+    width: 450px;
+    padding: 6px !important;
+    /* border: 3px solid; */
+    
+}
+.pickup-Driver{
+    background-color: green;
+    padding: 8px;
+    width: 450px;
+    border-radius: 3px;
+}
+.pickup-Driver input{
+    width: 430px;
+    border: none;
+    position: relative;
+    top: 5px;
+}
+.baseLocationforms button{
+    border: none;
+    padding: 6px;
+    border-radius: 3px;
+}
+.mapIcon{
+    /* background-color: red; */
+    position: relative;
+    bottom: 10px;
+    font-size: 20px;
+}
+
+
+
+
+@media(max-width:992px){
+    #baselocation_Modal {
+        border-radius: 10px;
+        top: 5%;
+        
+    }
+    #baselocation_Modal .shop {
+        position: absolute;
+        left: 20px;
+        width: 280px;
+        
+    }
+    #baselocation_Modal .shop input{
+        width: 180px;
+        padding: 5px;
+        border-radius: 10px;
+        
+    }
+    #baselocation_Modal .shop input::placeholder{
+        padding-left: 5px;
+    }
+    #baselocation_Modal .shopform input{
+        border: 1px soild lightgray;
+        border-radius: 15px;
+    }
+    #baselocation_Modal .shopform input::placeholder{
+        padding-left: 5px;
+        
+    }
+    #BaseLocation-Container .baseLocationform-Div{
+    }
+    
+    #BaseLocation-Container .baseLocationforms input{
+       width: 300px;
+       padding: 4px;
+    }
+    #BaseLocation-Container .baseLocationforms  .baselocation-Btn{
+        width: max-content;
+    }
+    #BaseLocation-Container  .pickup-Div div input,.baseLocationform-Div .driverSelect{
+        width: 300px !important;
+        
+    }
+
+
+}

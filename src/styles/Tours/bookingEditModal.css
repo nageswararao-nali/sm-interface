@@ -1,0 +1,99 @@
+#bookingsEditForm{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+#bookingsEditForm label{
+    font-size: 14px;
+
+}
+#bookingsEditForm input{
+    padding: 4px;
+    margin-bottom: 5px;
+    
+}
+#bookingsEditForm input:focus, #bookingAddressChooseModal input:focus{
+    outline: 1.5px solid rgb(94, 94, 226);
+    border: none;
+    padding: 5px;
+    border-radius: 2px;
+}
+.bookingsEditPickup .bookingsEditDrop{
+    display: flex;
+    gap: 10px;
+}
+.bookingsEditPickup input , .bookingsEditDropoff input{
+    width: 90%;
+
+}
+/* Address Choose Modal.. */
+#bookingAddressChooseModal input{
+    padding: 5px;
+    width: 100%;
+    border: 1.5px solid lightgrey;
+    border-radius: 3px;
+
+}
+#bookingAddressChooseModal .addressBox{
+    border: 1.5px solid lightgrey;
+    margin-top: 8px;
+    padding: 5px;
+    border-radius: 3px;
+}
+#bookingAddressChooseModal .addressBox button{
+    border: none;
+    border-radius: 2px;
+    height: 30px;
+    width: auto;
+    letter-spacing: 1.3px;
+}
+ 
+
+@media(max-width:992px){
+    .bookings-edit-modal-mobile{
+        width: 500px !important;
+        position:absolute;
+        top: 7%;
+        left: 250px;
+        
+    }
+    
+
+    .bookings-editpickup-modal-mobile,
+    .bookings-editdrop-modal-mobile {
+        width: 450px !important;
+        top: 5%;
+        left: 260px;
+    }
+
+}
+
+@media(max-width:320px){
+    .bookings-editpickup-modal-mobile,
+    .bookings-editdrop-modal-mobile {
+        width: 350px !important;
+    }
+
+}
+/* Tablet size... */
+
+@media(min-width:426px) and (max-width:768px){
+    
+    .bookings-edit-modal-mobile,
+    .bookings-editdrop-modal-mobile {
+        width: 500px !important;
+        position:absolute;
+        top: 7%;
+        left: -830px;
+    }
+    .bookings-editpickup-modal-mobile,
+    .bookings-editdrop-modal-mobile {
+        top: 5%;
+        left: -600px;
+    }
+
+  }
+
+

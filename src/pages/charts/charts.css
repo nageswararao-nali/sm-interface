@@ -1,0 +1,100 @@
+
+#chartContainer{
+    margin: 10px 10px 10px 0px ;
+    width: auto;
+}
+#chartContainer h3{
+    margin-top: 40px ;
+}
+.chartContainer-Content{
+    display: flex;
+    border: 1.5px solid rgb(197, 192, 192);
+    border-radius: 3px;        
+}
+.today-Details{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+}
+.today-Details  h5{
+    text-align: center;
+    padding: 13px;
+    font-weight: 400;
+}
+
+.today-Details .box{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.today-Details .box .iconBox-Container{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    height: 100px;
+    width: 150px;
+    border-radius: 3px;
+    border-radius: 3px;
+    border-left: 4px solid #30A46C;
+    
+}
+.today-Details .box .iconBox-Container .iconBox{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 10px;
+}
+.today-Details .box .iconBox-Container .iconBox{
+    font-size: 14px;
+}
+.iconBox-Container .iconBox-Count {
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+
+.custom-hr{
+    border: none;
+    border-top: 1.5px solid rgb(88, 86, 86);
+}
+.vertical-line {
+    border-left: 1.5px solid rgb(186, 182, 182); /* Change color and width as needed */
+    height:auto; /* Adjust height as needed */
+  }
+
+.overall{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.overall  h5{
+    text-align: center;
+    padding: 13px;
+    font-weight: 400;
+}  
+
+.overall .box{
+    /* border: 2px solid; */
+    display: flex;
+    flex-direction: column;
+    gap:10px ;
+    
+}
+.overallBox-Cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 120px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 3px;
+    border-left: 4px solid #30A46C;
+
+}
+.overallBox-Cont div{
+    display: flex;
+    gap: 10px;
+}
+
+

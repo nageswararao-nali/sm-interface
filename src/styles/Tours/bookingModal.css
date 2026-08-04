@@ -1,0 +1,95 @@
+.pickupLocation_Modal a{
+    margin-bottom: 10px;
+}
+
+.pickupLocation_Modal input{
+    width: 300px; 
+    padding: 5px;
+    text-indent: 16px;
+    
+}
+.pickupLocation_Modal input:focus{
+    border: 1.5px solid rgb(123, 123, 237);
+    border-radius: 3px;
+}
+#drop-offLocation_Modal a{
+    margin-bottom: 10px;
+}
+#drop-offLocation_Modal input{
+    width: 300px; 
+    padding: 5px;
+    text-indent: 16px;
+
+}
+#drop-offLocation_Modal input:focus{
+    border: 1.5px solid rgb(123, 123, 237);
+    border-radius: 3px;
+
+}
+#drop-offLocation_Modal div {
+    margin-bottom: 20px;
+}
+.pickupLocation_Modal div{
+    margin-bottom: 20px;
+
+}
+.section-2{
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 10px;
+    padding: 2px;
+}
+.buttons{
+    display: flex;
+    gap: 10px;
+}
+.react-select__menu {
+    z-index: 1000; /* or a higher value as needed */
+  }
+
+ .datePicker1 {
+    height: 37px;
+ }
+
+ /* Media Queries... */
+ @media(max-width:992px){
+    .section-2{
+        display: flex;
+        justify-content:flex-start;
+    }
+    /* Buttons Modal ... */
+    #export-booking-modal-mobile,
+    #export-home-modal-mobile,
+    #estimate-charge-modal-mobile{
+        /* border: 4px solid; */
+        width: 350px;
+        margin: auto;
+        top: 4%;
+        border-radius: 10px;
+
+    }
+    #export-booking-modal-mobile .modal-body,
+    #export-home-modal-mobile .modal-body,
+    #estimate-charge-modal-mobile .modal-body{
+        margin: auto;
+    }
+    #export-booking-modal-mobile .modal-body .dateBox input,
+    #export-home-modal-mobile .modal-body .dateBox input,
+    #estimate-charge-modal-mobile .modal-body input
+    {
+        width: 100%;
+        border-radius: 8px;
+        border: 1.5px solid lightgrey;
+     }
+    
+    #export-booking-modal-mobile .modal-body .dateBox,
+    #export-home-modal-mobile .modal-body .dateBox
+    {
+        display: flex;
+        flex-direction: column;
+        
+        
+     }
+
+ }
+

@@ -1,0 +1,349 @@
+
+/* TOAST MESSAGE.... */
+.toast-error-message{
+    width: max-content;
+    color: red !important;
+    font-weight: bold;
+}
+.toast-success-message{
+    min-width: 380px;
+    color: green !important;
+    font-weight: bold;
+}
+.addbookforms{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+
+}
+.addbookforms label b{
+    font-weight: lighter;
+    font-size: 14.5px;
+    
+}
+.addbookform-Div{
+    box-shadow:  0 0 5px 3px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+
+
+.addbookforms input{
+    width: 550px;
+    border: 1px solid grey;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    
+} 
+.addbookforms input:focus{
+    border: 1.5px solid rgb(103, 103, 235);
+}
+.addboook-Btn button{
+    width: 150px;
+}
+.addAddress-Btn:hover{
+    background-color: rgb(183, 236, 183);
+    color:black
+}
+.pickup-Div{
+    display: flex;
+    gap: 10px !important;
+}
+.pickup-Div input{
+    width: 550px !important;
+   
+}
+/* Card styling */
+#pickup-location-modal .cardFooter .btn{
+    padding: 0;
+}
+#pickup-location-modal .custom-toast-container{
+    width: 800px;
+}
+.class1{
+    color: green;
+    font-weight: bold;
+    text-decoration: underline !important;
+    /* text-decoration-w; */
+    text-decoration-color:green !important; 
+    border-bottom-width: "4px solid green" !important;
+    display: inline !important; 
+}
+.class2{
+    /* color: rgb(137, 137, 126); */
+    font-weight: bold;
+}
+/* Google Map address selection bar.. */
+.mapContainer{
+    /* position: relative; */
+}
+.address-selection{
+    border: 2px solid rgb(128, 124, 116);
+    background-color: lightgray;
+    border-radius: 3px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    position: absolute;
+    top: 30px;
+    left: 90px;
+}
+.address-selection input{
+    width: 320px;
+    padding: 4px;
+}
+.pac-container{
+    z-index: 10000 !important;
+}
+.sss{
+    display: flex;
+    flex-direction: column;
+}
+#add-Bookings-Container .addbookforms
+    {
+    
+    }
+
+.multi{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.multi label{
+    font-size: 14px;
+    font-weight: normal !important;
+    margin-bottom: 15px;
+}
+.multi .content{
+    margin-top: -10px !important;
+    padding-left: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.add_pick_drop_button{
+    border: none;
+    width: max-content;
+    padding: 5px;
+    position: relative;
+    left: 440px;
+    border-radius: 3px;
+
+}
+.mapIcon{
+    position: relative;
+    top: 0px;
+
+}
+.cancelIcon{
+    cursor: pointer;
+    width: 24px;
+    transition: background-color 0.6 ease-in-out;
+
+}
+.cancelIcon:hover{
+    background-color: rgb(219, 208, 208);
+    width: 24px;
+    padding: 0;
+    border-radius: 190px;
+}
+/* Fare MOdal.. */
+#Fare-Modal .modal-body{
+    margin: auto;
+}
+#Fare-Modal .modal-body button{
+    border: none;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+#fareTable  td{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: right;
+}
+#fareTable .fares{
+    text-align: center;
+    background-color: lightgrey;
+    font-weight: bold;
+}
+
+/* Radio Buttons */
+.radio-Container {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0px;
+}
+.radio-Container .column{
+    flex: 1;
+}
+.radio-Container .column input{
+    width: 40px;
+}
+.radioContainer{
+    margin: 10px 0px 10px 13px;
+    /* position: relative; */
+}
+.radioContainer label {
+    margin-right: 40px;
+    position: relative;
+    bottom: 2px;
+   
+}
+.radioContainer input {
+    width: 15px !important;
+    margin-right: 4px;
+}
+
+ 
+
+
+
+
+
+
+
+@media(max-width:992px){
+    #pickup-location-modal-mobile{
+        margin: auto;
+        
+
+    }
+    #pickup-location-modal-mobile .mapContainer,
+    #dropoff-location-modal-mobile .mapContainer{
+        position: relative;
+        top: -136px !important;
+    }
+    .addbookform-Div{
+        width: 330px;
+        padding: 10px;
+    }
+    .addbookform-Div input{
+        width: 90%;
+    }
+    .checkBoxText{
+        position: absolute;
+        left: 50px !important ;
+        font-size: 10px;
+    }
+    .searchInput input{
+        width: 63% !important;
+    }
+
+    
+    .checkBoxClick{
+        position: relative;
+        left: -35px !important;
+    }
+    .checkBox{
+        position: absolute;
+        left: 70px;
+        width: 10px !important;
+    }
+    .select-Div{
+        width: 210px !important;
+        padding: 4px !important;
+        height: 45px;
+
+    }
+    .mySelect__value-container{
+        height: 35px !important;
+       }
+    .controlWidth{
+        width: 200px;
+        height: 10px !important;
+    }
+    /* Form Styling ... */
+    
+    
+    
+    .addbookforms label b{
+        font-size: 11px ;
+    }
+    
+    .addbookforms input{
+        padding: 5px !important;
+        width: 195px;
+        
+    }
+    .pickup-Div input{
+        height: 28px;
+        width: 195px !important;
+        /* border: 4px solid; */
+        padding: 6px !important;
+        
+    }
+    .addbookforms input::placeholder{
+        font-size: 9px;
+        padding-left: 2px;
+    }
+    
+    .addbookforms button{
+        width: 150px;
+        padding: 4px !important;
+        font-size: 11px;
+        border-radius: 3px;
+        letter-spacing: 1px;
+    }
+
+    .address-selection{
+        position: absolute;
+        left: 10px;
+        width: 280px;
+    }
+    
+    .address-selection input{
+        border: 4px solid;
+        width: 200px;
+        border-radius: 5px;
+        border: 1.5px solid lightgray;
+    }
+    #pickup-location-modal-mobile,#dropoff-location-modal-mobile {
+        top: 6%;
+    }
+    .mapIcon{
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .add_pick_drop_button{
+        border: none;
+        position: relative;
+        left: 100px;
+        width: 120px !important;
+        padding: 0px 2px !important;
+        border-radius: 3px;
+        margin-bottom: 5px;
+    
+    }
+    #Fare-Modal{
+        border-radius: 10px;
+        left: 25%;
+        top: 5%;
+        max-width: 450px;
+    }
+    #Fare-Modal .modal-body button{
+        margin: 30px 0px;
+    }
+
+    /* .react-datepicker__time-container   .react-datepicker__time  
+.react-datepicker__time-box   ul.react-datepicker__time-list {  
+     padding: 0; 
+} */
+/* .react-datepicker__time-container{
+    position: absolute;
+    top: 250px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    
+    
+}
+.react-datepicker__time-list{
+    border: 2px solid blue;
+    height: 200px;
+    overflow-y: scroll;
+
+} */
+
+
+}

@@ -1,0 +1,42 @@
+.booking-Content{
+    /* border: 2px solid; */
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    padding: 3px;
+    box-shadow: 2px 2px 10px rgba(144, 238, 144, 0.5);
+    padding: 10px;
+    
+}
+.timeContent{
+    display: flex;
+    margin-bottom: 8px;
+    gap: 10px;
+
+}
+.timeContent div:first-child,
+.timeContent div:last-child{
+    box-shadow: 2px 2px 10px rgba(144, 238, 144, 0.5);
+    padding: 15px;
+}
+.timeContent div:last-child{
+    width: 230px;
+    padding: 12px;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+.fareIcon{
+    border: 2px solid ;
+    display: flex;
+    gap: 10px;
+    
+}
+
+.fareIcon .fareicon{
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+}

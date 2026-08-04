@@ -1,0 +1,17 @@
+
+.notificationContainer{
+    /* border: 3px solid; */
+}
+@media(max-width:992px){
+    .notificationContainer{
+        margin-top: 0 !important;
+        position: relative !important;
+        left: 0 !important;
+        width: 300 !important;
+        height: 100 !important;
+        top: 0 !important;
+    }
+    
+    
+
+}

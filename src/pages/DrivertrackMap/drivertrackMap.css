@@ -1,0 +1,73 @@
+  
+  #mapContainer{
+    display: flex;
+  }
+  .map_leftContent{
+    flex: 1.5;
+  }
+  .map_rightContent{
+    flex: 0.5;
+  }
+  .timeline {
+    position: absolute;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 40px;
+  }
+  /* Dot Line. */
+  .timeline-marker {
+    position: absolute;
+    left: 10px;
+    width: 16px;
+    height: 20px;
+    background-color: #c9c5c5;
+    border-radius: 50%;
+    top: 0;
+  }
+  
+  .timeline-content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+  }
+  /* Line connecter.. */
+  .timeline-connector {
+    position: absolute;
+    width: 4px;
+    background-color: #c9c5c5;
+    top: 20px;
+    bottom: -20px;
+    left: 16px;
+  }
+  
+  .timeline-content .date {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 5px;
+  }
+  
+  .timeline-content .description, .timeline-content .coordinates {
+    margin: 0;
+  }
+  /* MEDIA QUERIES... */
+  /* @media only screen and (min-width:576px) and (max-width:767px){
+    #mapContainer{
+      border: 3px solid red;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    
+    
+  } */
+
+
+  

@@ -1,0 +1,29 @@
+
+.editForm-Div{
+    display: flex;
+    gap: 40px;
+
+}
+.editForm-Div{
+    box-shadow:  0 0 5px 3px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+
+.editForm-Div input{
+    padding: 8px;
+    width: 370px;
+    border-radius: 2px;
+}
+.editForm-Div input:focus{
+    border: 3px solid rgb(103, 103, 235);
+}
+.editReset-Btn{
+    padding: 10px;
+   
+}
+.editReset-Btn button{
+    width: 100px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 15px;
+}

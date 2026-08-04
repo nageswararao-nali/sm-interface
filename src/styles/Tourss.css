@@ -1,0 +1,102 @@
+.estimate-time {
+    background-color: lightgreen;
+}
+
+.delay-time {
+    background-color: #f5c4c4;
+}
+.active{
+    border-bottom: 3px solid green;
+   
+}
+/* Sidebar nav styling  */
+#sidebar-menu a.active{
+    background-color: rgb(200, 237, 200);
+    border-bottom: none;
+    margin: 8px;
+    border-radius: 3px;
+    
+    
+}
+#sidebar-menu a:hover{
+    background-color: rgb(200, 237, 200);
+    border-radius: 10px;
+   
+}
+/* -------- */
+.tours-Link{
+    color: black;
+}
+.toursMenu{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+
+}
+
+.inactive{
+    color: black;
+}
+
+/* Tour Modal */
+
+#tourModalBody{
+    display: flex;
+    gap: 20px;
+}
+.part-1,.part-2{
+    flex: 2;
+}
+.dropDiv{
+    min-height: 400px;
+    min-width: 250px;
+    background-color: lightgrey;
+}
+ .unassignedTrips{
+    background-color: lightgrey;
+    padding: 4px;
+    min-height: 400px;
+    max-width: 250px;
+}
+.createTour{
+    background-color: lightgrey;
+    padding: 4px;
+    min-height: 400px;
+    max-width: 250px;
+
+}
+.draggableList{
+    margin: 0;
+    padding: 0;
+    padding: 5px;
+}
+.draggableItem{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.tripList:focus{
+    border-radius: 2px;
+    border: 1.5px solid rgb(96, 96, 239);
+}
+
+/* Commmon */
+.input-list-modal:focus{
+    border-radius: 2px;
+    border: 1.5px solid rgb(96, 96, 239);
+    
+}
+
+.check1{
+    /* background: blue !important; */
+    /* border-bottom: 2px solid red; */
+    background-color: lightgray !important;
+
+   /* background-color: lightblue !important; */
+}
+.check2{
+    border-bottom: 0.5px solid lightgrey;
+    /* background-color: lightgray !important; */
+}

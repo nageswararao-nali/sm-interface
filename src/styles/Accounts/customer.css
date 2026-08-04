@@ -1,0 +1,15 @@
+
+
+@media(max-width:992px){
+    .pagenoCounts{
+        /* border: 2px solid yellow; */
+        position: relative;
+        left: 180px;
+    }
+    #customerPagination{
+        /* border: 2px solid red; */
+        position: relative;
+        right: 160px;
+    }
+
+}

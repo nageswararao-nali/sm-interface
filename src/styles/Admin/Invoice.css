@@ -1,0 +1,26 @@
+.select-div{
+    margin-bottom:"20px";
+    /* width:"190px"; */
+    padding:"2px";
+    background-color:"green";
+    color:"white";
+    background-color: red;
+    padding: 2px;
+}
+
+.select select{
+    width: 200px;
+    padding: 3px;
+    background-color: green;
+    color: white;
+    margin-bottom: 10px;
+
+}
+.select .options{
+    color: red;
+}
+.select option {
+    color: teal;
+    position: relative;
+    left: 20px;
+}
