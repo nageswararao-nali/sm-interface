@@ -37,6 +37,7 @@ import {
 } from "../../../helpers/auth_helper";
 
 import { CHECK_USER,LOGIN_USER } from "../../../helpers/url_helper";
+import { setAuthToken } from "../../../api/apiConfig";
 
 function* checkUser({ payload: { data } }) {
   console.log("Saga checkuser -",data);
@@ -44,8 +45,11 @@ function* checkUser({ payload: { data } }) {
     const response = yield call(checkUserApi, data);
     console.log("saga-",response);
     if(response.success){
+      if (response.token) {
+        setAuthToken(response.token);
+      }
       yield put(checkUserSuccess(response));
-      
+
     }else{
       yield put(checkUserFailed(response));
 
@@ -125,7 +129,7 @@ function* loginUser({payload:{data}}){
 
 function* logoutUser({ payload: { history } }) {
   try {
-    localStorage.removeItem("authUser");
+    setAuthToken(null);
 
     history.push("/login");
   } catch (error) {

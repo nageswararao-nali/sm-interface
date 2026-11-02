@@ -372,12 +372,15 @@ const Tours = () => {
 
   async function getToursData(p) {
     setLoading(true);
-    const request = await fetch(`${baseUrl}/tours/toursList`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...p, limit: showDataPerPage, offset }),
+    // plain fetch() never carried the Authorization header (that's only attached to
+    // axios calls via axios.defaults.headers.common in apiConfig.js), causing 401s -
+    // switched to axios to match every other call in this file/app.
+    const request = await axios.post(`${baseUrl}/tours/toursList`, {
+      ...p,
+      limit: showDataPerPage,
+      offset,
     });
-    const response = await request.json();
+    const response = request.data;
     setTotalCount(response.data.count);
     setTourData(response.data.tours);
     setLoading(false);

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from 'react-router'
+import { baseUrl, getAuthHeader } from "../../api/apiConfig"
 // import { MapContainer, TileLayer, , Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { CheckCircle2, Truck, Phone, Bike, MapPin, ChevronRight, TruckIcon } from "lucide-react";
@@ -87,6 +88,7 @@ const TrackOrder = () => {
       body: JSON.stringify(searchQuery),
       headers: {
         "Content-type": "application/json",
+        ...getAuthHeader(),
       },
     });
     return res.json();
@@ -98,6 +100,7 @@ const TrackOrder = () => {
       body: JSON.stringify({ tourId }),
       headers: {
         "Content-type": "application/json",
+        ...getAuthHeader(),
       },
     });
   
@@ -114,6 +117,7 @@ const TrackOrder = () => {
       }),
       headers: {
         "Content-type": "application/json",
+        ...getAuthHeader(),
       },
     });
     return drivers.json();
@@ -127,6 +131,7 @@ const TrackOrder = () => {
       }),
       headers: {
         "Content-type": "application/json",
+        ...getAuthHeader(),
       },
     });
     return res.json();
@@ -141,6 +146,7 @@ const TrackOrder = () => {
       body: JSON.stringify({ driver_id }),
       headers: {
         "Content-type": "application/json",
+        ...getAuthHeader(),
       },
     });
     return drivers.json();
@@ -268,7 +274,6 @@ const TrackOrder = () => {
       );
     }
 
-    const baseUrl = "https://test-api.goodmove.in/api";
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: GOOGLE_API_KEY,

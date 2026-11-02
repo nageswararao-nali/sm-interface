@@ -25,7 +25,8 @@ const Vehicles = () => {
 
   // add form
   const [vehno, setVehno] = useState(0);
-  const [veh_type, setVeh_type] = useState("");
+  // Only 4-wheeler trucks are used in practice, so vehicle type is no longer a form field.
+  const veh_type = "4wheeler";
   const [veh_Capacity, setVeh_Capacity] = useState(0);
   const [status, setStatus] = useState("");
   const [ownerId, setOwnerId] = useState(null);
@@ -137,7 +138,7 @@ const Vehicles = () => {
       registration_number: vehno,
       vehicle_type: veh_type,
       capacity: veh_Capacity,
-      capacity_unit:veh_type == '2W'?"KG":"TON",
+      capacity_unit: "TON",
       opened_closed: status,
     };
     try {
@@ -292,19 +293,6 @@ const Vehicles = () => {
                   placeholder="Vehicle Reg No"
                   onChange={(e) => setVehno(e.target.value)}
                 />
-                <label htmlFor="veh_Type">Vehicle Type :</label>
-                <select
-                  name=""
-                  id="veh_Type"
-                  onChange={(e) => setVeh_type(e.target.value)}
-                >
-                  <option value="choose vehicle type" selected>
-                    choose vehicle type
-                  </option>
-                  <option value="Tata ace">Tata ace</option>
-                  <option value="Dost">Dost</option>
-                  <option value="2W">2W</option>
-                </select>
                 <label htmlFor="veh_Capacity">Capacity of Vehicle :</label>
                 <input
                   type="text"

@@ -22,7 +22,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ReactSelect from "../../ReactSelect";
 import moment from "moment";
 import { CSVLink } from "react-csv";
-import { baseUrl } from '../../api/apiConfig';
+import { baseUrl, getAuthHeader } from '../../api/apiConfig';
 import TourEditModal from "../../components/editModals/TourEditModal";
 import TourCount from "../counts/TourCount";
 
@@ -574,7 +574,7 @@ const override = css`
         `${baseUrl}/tours/toursList`,
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json", ...getAuthHeader() },
           body: JSON.stringify({...params,limit:showDataPerPage,offset:offset}),
         }
       );

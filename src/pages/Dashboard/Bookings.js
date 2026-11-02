@@ -412,6 +412,25 @@ console.log(pageNumber)
 
   };
 
+  // Manual re-broadcast: for a multi-booking group nobody has accepted yet, re-search for
+  // nearby drivers at any time instead of waiting for the original 30s dispatch window.
+  const [rebroadcastingId, setRebroadcastingId] = useState(null);
+  const handleRebroadcast = async (multiBookingId) => {
+    setRebroadcastingId(multiBookingId)
+    try {
+      const resp = await axios.post(`${baseUrl}/booking/rebroadcastDispatch`, { multi_booking_id: multiBookingId })
+      alert(resp.data.message)
+      if (resp.data.success) {
+        getTodayBookings()
+      }
+    } catch (error) {
+      console.log(error, "Failed to re-broadcast");
+      alert("Failed to re-broadcast")
+    } finally {
+      setRebroadcastingId(null)
+    }
+  }
+
   const handleConfirmation = async (booking_id) => {
     console.log(booking_id);
     const result=await axios.post(`${baseUrl}/booking/confirmBooking`,{"booking_id":booking_id},{
@@ -1351,6 +1370,13 @@ const getObj=(obj)=>{
                                 onClick={() => navigate(`/dashboard/tours/bookings/${item.id}`)}/>
                             )}
                             <span>{item.driver_name}</span>
+                            {(item.multi_booking_id && !item.tour_id && !canceled) && (
+                              <button onClick={() => handleRebroadcast(item.multi_booking_id)}
+                                disabled={rebroadcastingId === item.multi_booking_id}
+                                className="text-xs bg-brand-500 hover:bg-brand-600 disabled:opacity-50 text-white px-2 py-1 rounded-lg transition-colors" style={{width:"auto"}}>
+                                {rebroadcastingId === item.multi_booking_id ? "..." : "Re-broadcast"}
+                              </button>
+                            )}
                           </div>
                         </td>
                         <td className={td}>{item.reached_pickup || ""}</td>
@@ -1481,10 +1507,13 @@ const getObj=(obj)=>{
                 item.payment_made_by === "ill_pay" ? (item.payment_status?.toLowerCase() !== "completed" ? "Customer choose to pay" : "Customer paid") :
                 item.payment_made_by;
 
+              const canRebroadcast = item.multi_booking_id && !item.tour_id && !canceled;
+
               const needsAction =
                 (item.estimated_fare == 0 && item.fare === null && item.booking_confirm_status == 0 && !item.booking_canceled_by_manager) ||
                 (item.fare == null && item.estimated_fare != 0 && item.booking_canceled_by_manager == 0 && item.booking_confirm_status == 0) ||
-                (!item.marked_as_trip && !canceled);
+                (!item.marked_as_trip && !canceled) ||
+                canRebroadcast;
 
               return (
                 <div key={item.id}
@@ -1652,6 +1681,16 @@ const getObj=(obj)=>{
                           </select>
                           <button onClick={() => handleSplitConfirmation(item, item.id, index)}
                             className="text-xs bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1.5 rounded-lg transition-colors" style={{width:"auto"}}>Confirm</button>
+                        </div>
+                      )}
+                      {canRebroadcast && (
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-medium text-amber-700 hidden sm:inline">No driver yet</span>
+                          <button onClick={() => handleRebroadcast(item.multi_booking_id)}
+                            disabled={rebroadcastingId === item.multi_booking_id}
+                            className="text-xs bg-brand-500 hover:bg-brand-600 disabled:opacity-50 text-white px-3 py-1.5 rounded-lg transition-colors" style={{width:"auto"}}>
+                            {rebroadcastingId === item.multi_booking_id ? "Re-broadcasting..." : "Re-broadcast"}
+                          </button>
                         </div>
                       )}
                     </div>

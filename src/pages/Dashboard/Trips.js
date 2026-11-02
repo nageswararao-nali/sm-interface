@@ -10,7 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-select";
 import axios from "axios";
 import moment from "moment";
-import { baseUrl } from "../../api/apiConfig";
+import { baseUrl, getAuthHeader } from "../../api/apiConfig";
 import TripEditModal from "../../components/editModals/TripEditModal";
 import Pagination from "../../Pagination";
 import "../../styles/Tours/trips.css";
@@ -97,7 +97,7 @@ const Trips = () => {
     try {
       const request = await fetch(`${baseUrl}/booking/getTrips`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...getAuthHeader() },
         body: JSON.stringify({ ...tripPayload, limit: showDataPerPage, offset }),
       });
       const response = await request.json();

@@ -65,10 +65,6 @@ const NewAddBookings = () => {
   // for Modal..
   const [pick_loca, setPick_loca] = useState(false);
   const [drop_loca, setDrop_loca] = useState(false);
-  // All Charges checkbox.....
-  const[load,setLoad]=useState(false)
-  const[unLoad,setUnLoad]=useState(false)
-  const[both,setBoth]=useState(false)
   /// map,
   const sourceRef = useRef();
   const multiSourceRef=useRef()
@@ -102,14 +98,13 @@ const NewAddBookings = () => {
 
   const[fareModal,setFareModal]=useState(false)
   const[paymentModal,setPaymentModal]=useState(false)
-  const[showReturnWeight,setShowReturnWeight]=useState(false)
   const[multiPickupButton,setMultiPickupButton]=useState(false)
   const[multiDropButton,setMultiDropButton]=useState(false)
   const[showInputs,setShowInputs]=useState(false)
-  const[returnWeight,setReturnWeight]=useState("")
   const[fareObj,setFareObj]=useState()
   const[trip_type,setTrip_type]=useState("")
-  const[booking_type,setBooking_type]=useState()
+  // Delivery speed selection removed from the form - every booking is now Vivegam.
+  const booking_type = true
   // const [totalFare, setTotalFare] = useState(0)
 
   
@@ -609,7 +604,7 @@ const changePickup = () => {
   const addBookingObj = {
     customer_id: customer_id,
     commodity_weight: comm_weight,
-    return_weight:returnWeight,
+    return_weight:"",
     commodity_type: 1,
     commodity_whole_volume: 1,
     volume_unit: 35,
@@ -626,12 +621,12 @@ const changePickup = () => {
     time_interval: 3,
     estimated_fare:"",
     booking_for:"pickup",
-    vehicle_type:"2wheeler",
+    vehicle_type:"4wheeler",
     trip_type:trip_type,
     is_vivegam:booking_type,
-    loading_charge_applicable:load,
-    unloading_charge_applicable:unLoad,
-    both_loading_unloading_charge_applicable:both,
+    loading_charge_applicable:false,
+    unloading_charge_applicable:false,
+    both_loading_unloading_charge_applicable:false,
     time_interval: 3,
     instruction: add_info,
     packaging_type: 1,
@@ -770,15 +765,6 @@ const changePickup = () => {
 
   }
 
-  const handleLoadingCharges=()=>{
-    setLoad(!load)
-  }
-  const handleUnLoadingCharges=()=>{
-    setUnLoad(!unLoad)
-  }
-  const handleBothCharges=()=>{
-    setBoth(!both)
-  }
   const changeView=()=>{
     // setCheck(!check)
     setCheck1(false)
@@ -1204,59 +1190,27 @@ const changePickup = () => {
   const handleChooseTravelType=(e)=>{
     let travelType=e.target.value;
     setTrip_type(travelType)
-    if(travelType == "round"){
-      setShowReturnWeight(true)
-      setMultiPickupButton(false)
-      setMultiDropButton(false)
-      setDropAddressArr([])
-      setPickupAddressArr([])
-
-
-
-    }else if(travelType == "multipickup"){
+    if(travelType == "multipickup"){
       setMultiPickupButton(true)
       setMultiDropButton(false)
-      setShowReturnWeight(false)
       setDropAddressArr([])
 
     }else if(travelType == "multidrop"){
       setMultiDropButton(true)
       setMultiPickupButton(false)
-      setShowReturnWeight(false)
       setPickupAddressArr([])
-      
+
 
     }
     else{
-      setShowReturnWeight(false)
       setMultiPickupButton(false)
       setMultiDropButton(false)
       setDropAddressArr([])
       setPickupAddressArr([])
 
     }
-    
-  }
-
-  // Choose vegam or Vivegam ...,,
-  
-  const handleChooseIsVivegam=(e)=>{
-    if(e.target.checked){
-      if(e.target.value == "vegam"){
-        setBooking_type(false)
-      }else if(e.target.value == "vivegam"){
-        setBooking_type(true)
-
-      }
-    }
 
   }
-
-  const handleReturnWeight =(e)=>{
-    setReturnWeight(e.target.value)
-  } 
-
-  
 
   // Showing MutiPickup Button
   const showingMultiPickupAddress = (e) => {
@@ -1430,9 +1384,6 @@ const changePickup = () => {
           <span>Fare Split Details:</span>
         </ModalHeader>
         <ModalBody className="modal-body">
-           {/* loading_charge_applicable:load,
-    unloading_charge_applicable:unLoad,
-    both_loading_unloading_charge_applicable:both, */}
           <table id="fareTable">
             {/* <tr className="fares"><td>FARES</td><td>Rs.</td></tr> */}
           <tr><td>Estimated  Fare :</td><td>{fareObj?.total_fare }</td></tr>
@@ -1519,10 +1470,8 @@ const changePickup = () => {
               <div className="column">
               <input type="radio" name="Choose" id="oneway" value="oneway" onChange={handleChooseTravelType}/>
               <label htmlFor="oneway">OneWay</label>
-              <input type="radio" name="Choose" id="round" style={{marginLeft:30}} value="round" onChange={handleChooseTravelType} />
-              <label htmlFor="round">Round</label>
               </div>
-                
+
                 <div className="column">
                 <input type="radio" name="Choose" id="multiPickup" value="multipickup" onChange={handleChooseTravelType} />
                 <label htmlFor="multiPickup">Multi Pick-up</label>
@@ -1530,16 +1479,6 @@ const changePickup = () => {
                 <label htmlFor="multiDrop">Multi Drop</label>
                 </div>
             </div>
-          
-            <label><b>Delivery Speed :</b></label>
-          <div className="radioContainer">
-          <input type="radio" name="vegam" id="vegam"  value="vegam" onClick={handleChooseIsVivegam} />
-          <label htmlFor="vegam">Vegam</label>
-          <input type="radio" name="vegam" id="vivegam" value="vivegam" onClick={handleChooseIsVivegam} />
-          <label htmlFor="vivegam">Vivegam</label>
-          </div>
-          
-
 
 
           <label htmlFor="commodity"><b>Commodity Weight :</b></label>
@@ -1562,14 +1501,6 @@ const changePickup = () => {
           showTimeSelect
           // showTimeInput
         />
-          
-          {showReturnWeight &&
-            <div className="multi">
-              <label htmlFor="Return Weight">Return Weight :</label>
-              <input type="text" id="Return Weight" onChange={handleReturnWeight}
-              placeholder="Enter return weight " />
-            </div>
-          }
           
              <div>
               <label htmlFor="pickup">{trip_type=="multipickup"? <b>Pickup Location - 1 :</b>:<b>Pickup Location :</b>}</label>
@@ -1698,31 +1629,6 @@ const changePickup = () => {
 
           
           
-          <p style={{ padding: "2px", marginBottom: "30px" }} className="checkContainer" >
-            <span className="checkBoxClick" style={{ position: "absolute", left: "25px" }} >
-              <input className="checkBox" type="checkbox" checked={load} onChange={handleLoadingCharges} id="loading" />
-            </span>
-            <span style={{ position: "absolute", left: "315px" }} className="checkBoxText">
-              Loading charges applicable ?
-            </span>
-          </p>
-          <p style={{ padding: "2px", marginBottom: "30px" }}>
-            <span className="checkBoxClick" style={{ position: "absolute", left: "25px" }}>
-              <input type="checkbox" checked={unLoad} onChange={handleUnLoadingCharges} id="loading" className="checkBox" />
-            </span>
-            <span style={{ position: "absolute", left: "315px" }} className="checkBoxText">
-              Unloading charges applicable ?
-            </span>
-          </p>
-          <p style={{ padding: "2px", marginBottom: "30px" }}>
-            <span className="checkBoxClick" style={{ position: "absolute", left: "25px" }}>
-              <input type="checkbox" checked={both} onChange={handleBothCharges} id="loading" className="checkBox" />
-            </span>
-            <span style={{ position: "absolute", left: "315px" }} className="checkBoxText">
-              Both ?
-            </span>
-          </p>
-
           <label htmlFor="info"><b>Additional Information :</b></label>
           <input
             type="text"

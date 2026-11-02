@@ -97,6 +97,7 @@ const App = props => {
     <React.Fragment>  
         <Routes>
             <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route path='/otp/:mobileno' element={<Otpverify/>}/>
             {/* <Route path='/dashboard' element={<Dashboard/>}/> */}
             <Route path='/dashboard/charts' element={<Charts/>}/>

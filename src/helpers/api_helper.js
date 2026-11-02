@@ -1,12 +1,13 @@
 import axios from "axios"
 import accessToken from "./jwt-token-access/accessToken"
+import { baseUrl } from "../api/apiConfig"
 
 //pass new generated access token here
 const token = accessToken
 
 //apply base url for axios
 const API_URL = "http://localhost:8080/api/v1"
-const SERVER_API_URL = "https://test-api.goodmove.in/api"
+const SERVER_API_URL = baseUrl
 
 const axiosApi = axios.create({
   baseURL: API_URL,
